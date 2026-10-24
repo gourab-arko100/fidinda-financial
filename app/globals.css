@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------
+   THEME TOKENS (RGB triplets). Light is the default; .dark on <html>
+   switches the whole site. Brand navy #1C095A and red #E1041C
+   sections stay the same in both themes.
+---------------------------------------------------------------- */
+:root {
+  --surface: 255 255 255;
+  --paper: 246 247 251;
+  --tint: 243 242 250;
+  --field: 241 241 247;
+  --line: 228 227 238;
+  --line-strong: 201 195 230;
+  --ink: 20 17 51;
+  --muted: 85 82 111;
+  --heading: 28 9 90;
+  --accent-soft: 253 236 238;
+  --accent-ink: 184 3 23;
+  color-scheme: light;
+}
+.dark {
+  --surface: 20 13 52;
+  --paper: 12 7 34;
+  --tint: 34 25 80;
+  --field: 30 22 70;
+  --line: 48 40 96;
+  --line-strong: 76 66 136;
+  --ink: 232 230 245;
+  --muted: 170 166 200;
+  --heading: 255 255 255;
+  --accent-soft: 66 10 32;
+  --accent-ink: 255 99 114;
+  color-scheme: dark;
+}
+
+@layer base {
+  html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+  body {
+    @apply font-sans text-[17px] leading-relaxed antialiased;
+    background-color: rgb(var(--surface));
+    color: rgb(var(--ink));
+    transition: background-color 0.3s, color 0.3s;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display tracking-[-0.02em];
+    color: rgb(var(--heading));
+  }
+  :focus-visible { @apply outline outline-2 outline-offset-2 outline-accent-600; }
+  ::selection { @apply bg-accent-600 text-white; }
+}
+
+@layer components {
+  /* Section spacing lives only on .band so nothing else fights it */
+  .band { @apply py-20 sm:py-28; }
+
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-5 py-3 text-[15px] font-semibold transition-colors duration-200; }
+  .btn-red { @apply btn bg-accent-600 text-white hover:bg-accent-700; }
+  .btn-indigo { @apply btn bg-brand-900 text-white hover:bg-brand-700 dark:bg-brand-600 dark:hover:bg-brand-700; }
+  .btn-line {
+    @apply btn border;
+    border-color: rgb(var(--line-strong));
+    background-color: rgb(var(--surface));
+    color: rgb(var(--heading));
+  }
+  .btn-line:hover { border-color: rgb(var(--heading)); }
+  .btn-line-light { @apply btn border border-white/35 text-white hover:border-white hover:bg-white/5; }
+
+  /* The short red stroke borrowed from the logo mark */
+  .stroke-mark { @apply block h-[3px] w-7 bg-accent-600; }
+
+  .h-section { @apply text-3xl font-semibold leading-[1.15] sm:text-[2.6rem]; }
+  .lead { @apply text-lg leading-relaxed; color: rgb(var(--muted)); }
+
+  .nav-link {
+    @apply relative rounded-md px-3 py-2 text-[15px] font-medium transition-colors focus-visible:outline-none;
+    color: rgb(var(--heading) / 0.8);
+  }
+  .nav-link:hover { color: rgb(var(--heading)); }
+  .nav-link:focus-visible { box-shadow: 0 0 0 2px rgb(var(--line-strong)); }
+  .nav-link-active {
+    @apply after:absolute after:inset-x-3 after:-bottom-[1px] after:h-[2px] after:bg-accent-600;
+    color: rgb(var(--heading));
+  }
+
+  .footer-heading { @apply mb-5 font-display text-[15px] font-semibold text-white; }
+  .footer-link { @apply text-brand-200 transition-colors hover:text-white; }
+
+  .text-link {
+    @apply font-semibold underline decoration-accent-600 decoration-2 underline-offset-[6px] transition-colors;
+    color: rgb(var(--heading));
+  }
+  .text-link:hover { color: rgb(var(--accent-ink)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-delay: 0ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}

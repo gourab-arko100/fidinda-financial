@@ -63,8 +63,7 @@ export const photos = {
 export type Photo = { src: string; alt: string };
 
 export const nav = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
+  { label: "About Us", href: "/about" },
   {
     label: "Services",
     href: "/services",
@@ -124,9 +123,14 @@ export const footerColumns = [
     links: [
       { label: "Packages", href: "/packages" },
       { label: "Request a Quote", href: "/request-quotation" },
-      { label: "Local Legislations", href: "/resources#legislations" },
+    ],
+  },
+  {
+    title: "Resource Library",
+    links: [
+      { label: "Publications", href: "/resources#publications" },
       { label: "Articles", href: "/resources#articles" },
-      { label: "All Resources", href: "/resources" },
+      { label: "Local Legislations", href: "/resources#legislations" },
     ],
   },
   {
@@ -207,7 +211,7 @@ export type Service = {
   tagline: string;
   intro: string;
   credential?: string;
-  offerings: { title: string; text: string }[];
+  offerings: { title: string; text?: string }[];
   benefits: { title: string; text: string }[];
   process: { title: string; text: string }[];
   faqs: { q: string; a: string }[];
@@ -223,20 +227,16 @@ export const services: Service[] = [
     tagline:
       "Empower your business with expert accounting solutions designed to optimise financial performance and ensure seamless compliance.",
     intro:
-      "Reliable accounts are the foundation of every good business decision. We keep your books accurate and up to date, prepare your financial statements, and turn the numbers into reports you can actually use.",
+      "Our expertise lies in providing comprehensive accounting, financial advisory and support services to businesses, organizations, and individuals. Our work encompasses financial analysis, reporting, compliance, and strategic planning for our clients. We are expert in areas such as financial statement preparation, tax planning, budgeting, and internal control assessment, including regulatory compliance, accounting software implementation, and the development of sound financial policies and procedures. Our services assist clients in making informed financial decisions, optimizing resource allocation, and enhancing overall financial performance. We also offer tailored solutions that align with our clients' specific needs and contribute to their long-term financial success.",
     offerings: [
-      {
-        title: "Bookkeeping",
-        text: "Day-to-day recording of sales, purchases, payroll and expenses, with monthly reconciliations of bank and cash accounts.",
-      },
-      {
-        title: "Financial statement preparation",
-        text: "Balance sheet, income statement, cash flow statement and notes prepared in line with Cambodian reporting standards.",
-      },
-      {
-        title: "Financial reporting",
-        text: "Clear monthly, quarterly or annual management reports that show performance, trends and where to focus next.",
-      },
+      { title: "Bookkeeping" },
+      { title: "Account Reviewing" },
+      { title: "Monthly Financial Report" },
+      { title: "Year End Closing" },
+      { title: "Accounting System Development" },
+      { title: "Accounting Forms Generation" },
+      { title: "Formulating Accounting Policy" },
+      { title: "Customized Training" },
     ],
     benefits: [
       { title: "Up-to-date records", text: "Know exactly where your business stands at any time." },
@@ -270,7 +270,7 @@ export const services: Service[] = [
       },
     ],
     seoDescription:
-      "Bookkeeping, financial statement preparation and financial reporting for businesses and NGOs in Phnom Penh, Cambodia.",
+      "Bookkeeping, account reviewing, monthly financial reports, year-end closing, accounting systems, accounting policy and training for businesses in Phnom Penh, Cambodia.",
   },
   {
     slug: "taxation",
@@ -279,15 +279,18 @@ export const services: Service[] = [
     tagline:
       "Stay ahead of your tax obligations with precise and timely tax filing services that minimise stress.",
     intro:
-      "Cambodian tax rules change often and deadlines are strict. As a licensed tax agent registered with the General Department of Taxation (GDT), we handle your registrations, declarations and reviews so you stay compliant and avoid penalties.",
+      "We offer Tax Returns Preparation and Filing services to help businesses meet their compliance obligations seamlessly. Our team of experts ensures that all the necessary forms and documents are filed correctly and on time, avoiding penalties and ensuring a smooth and hassle-free experience for our clients.",
     credential: "Licensed Tax Agent – General Department of Taxation (GDT)",
     offerings: [
-      { title: "Monthly tax declarations", text: "Preparation and submission of monthly returns, including VAT, withholding tax, salary tax and prepayment of tax on income." },
-      { title: "Annual tax declarations", text: "Annual tax on income returns prepared accurately and filed before the deadline." },
-      { title: "Tax registration", text: "Registration with the GDT, VAT registration and updates to your tax information." },
-      { title: "Tax advisory", text: "Practical advice on tax obligations, incentives and the tax impact of business decisions." },
-      { title: "Tax compliance reviews", text: "A health check of your past filings to identify risks and correct issues early." },
-      { title: "Tax audit support", text: "Preparation and representation during GDT tax audits, from document requests to final assessment." },
+      { title: "Monthly Tax Declaration / E-filing", text: "Value Added Tax, Salary Tax, Fringe Benefit Tax, Withholding Tax, Prepaid Income Tax etc." },
+      { title: "Annual Tax Return on Income" },
+      { title: "Patent Renewal" },
+      { title: "Update Company's Status with GDT" },
+      { title: "Change Company's Information", text: "Address, Share Transfer, Add Business Activity, Increase Capital, Memorandum of Association etc." },
+      { title: "Tax Registration and De-Registration" },
+      { title: "Tax Refund Application" },
+      { title: "Tax Audit Consultancy, Tax Advisory" },
+      { title: "Tax Reviewing" },
     ],
     benefits: [
       { title: "No missed deadlines", text: "We track every filing date for you." },
@@ -326,7 +329,7 @@ export const services: Service[] = [
       href: "https://management.fidindasolutions.com",
     },
     seoDescription:
-      "Licensed GDT tax agent in Phnom Penh — monthly and annual tax declarations, tax registration, advisory, compliance reviews and tax audit support.",
+      "Licensed GDT tax agent in Phnom Penh: monthly tax declarations and e-filing, annual tax returns, patent renewal, tax registration, refunds, tax audit consultancy and advisory.",
   },
   {
     slug: "auditing",
@@ -335,12 +338,11 @@ export const services: Service[] = [
     tagline:
       "Ensure financial transparency and integrity with meticulous auditing services and accurate reports for strategic decisions.",
     intro:
-      "An independent audit gives owners, boards, donors and investors confidence in your numbers. As a member of the Kampuchea Institute of Certified Public Accountants and Auditors (KICPAA), we carry out careful, objective audits and give you practical recommendations.",
+      "We offer accounting and auditing services, including the preparation of annual financial reports for unaudited companies. Our meticulous approach ensures accurate and compliant financial reporting.",
     credential: "Member – Kampuchea Institute of Certified Public Accountants and Auditors (KICPAA)",
     offerings: [
-      { title: "Financial auditing services", text: "Independent examination of your financial statements to confirm they present a true and fair view." },
-      { title: "Internal control review", text: "Assessment of your financial processes and controls, with clear recommendations for improvement." },
-      { title: "Donor & project audits", text: "Audits for NGOs and funded projects to meet donor reporting requirements." },
+      { title: "E-filing / Registration with ACAR" },
+      { title: "Prepare Annual Financial Report for Unaudited Companies" },
     ],
     benefits: [
       { title: "Transparency", text: "Give stakeholders confidence in your financial information." },
@@ -370,7 +372,7 @@ export const services: Service[] = [
       },
     ],
     seoDescription:
-      "Financial auditing services by a KICPAA member firm in Phnom Penh — transparency, stronger controls and accurate reports.",
+      "Accounting and auditing services in Phnom Penh: e-filing and registration with ACAR and annual financial reports for unaudited companies.",
   },
 ];
 
@@ -419,8 +421,22 @@ export const packages = {
 };
 
 export const resources = {
-  intro: "Useful references on Cambodian tax and accounting rules, plus articles from our team.",
+  intro: "Publications, articles and Cambodian legislation on tax, accounting and audit, collected in one place.",
   // Add more entries by copying an object below
+  publications: [
+    {
+      title: "Cambodia Tax Calendar 2026",
+      summary: "Key monthly and annual filing deadlines for the year. Placeholder publication; replace with your PDF link.",
+      href: "#",
+      date: "Coming soon",
+    },
+    {
+      title: "Guide to Monthly Tax Declarations",
+      summary: "A short guide to VAT, salary tax, withholding tax and prepaid income tax filings. Placeholder publication.",
+      href: "#",
+      date: "Coming soon",
+    },
+  ],
   legislations: [
     {
       title: "Law on Taxation (2023)",
@@ -439,26 +455,6 @@ export const resources = {
       summary: "Latest notifications and instructions issued by the General Department of Taxation. Placeholder entry.",
       href: "#",
       date: "Updated regularly",
-    },
-  ],
-  articles: [
-    {
-      title: "Monthly Tax Filing Checklist for Cambodian SMEs",
-      summary: "A simple checklist to help you prepare for your monthly declarations. Placeholder article.",
-      href: "#",
-      date: "Coming soon",
-    },
-    {
-      title: "Do You Need a Statutory Audit?",
-      summary: "How to tell whether your organisation must be audited. Placeholder article.",
-      href: "#",
-      date: "Coming soon",
-    },
-    {
-      title: "Five Bookkeeping Habits That Save You Money",
-      summary: "Practical tips to keep your records clean all year. Placeholder article.",
-      href: "#",
-      date: "Coming soon",
     },
   ],
 };

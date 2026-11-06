@@ -26,7 +26,7 @@ export default function Footer() {
         <span className="flex-1 bg-brand-600" />
       </div>
 
-      <div className="container grid gap-12 pb-14 pt-16 lg:grid-cols-[1.35fr_repeat(4,minmax(0,1fr))] lg:gap-10">
+      <div className="container grid gap-10 pb-12 pt-12 sm:gap-12 sm:pb-14 sm:pt-16 lg:grid-cols-[1.05fr_4fr] lg:gap-12">
         {/* Brand + contact */}
         <div className="sm:max-w-sm">
           <Link href="/" aria-label={`${site.name} home`} className="inline-flex rounded-lg bg-white px-4 py-3 shadow-sm">
@@ -67,9 +67,9 @@ export default function Footer() {
         </div>
 
         {/* Link columns */}
-        <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-4 lg:col-span-4 lg:gap-x-10">
-          {footerColumns.map((col) => (
-            <nav key={col.title} aria-label={col.title}>
+        <div className="grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-[1fr_0.95fr_1.1fr_0.95fr_1.35fr] lg:gap-x-7">
+          {footerColumns.map((col, i) => (
+            <nav key={col.title} aria-label={col.title} className={i === footerColumns.length - 1 ? "col-span-2 sm:col-span-1" : undefined}>
               <h2 className="font-display text-lg font-semibold text-white">{col.title}</h2>
               <ul className="mt-5 space-y-3.5 text-[15px]">
                 {col.links.map((l) => (

@@ -36,9 +36,9 @@ export function PageHero({
         </>
       )}
       {decor && !image && <Mark animate={false} className="pointer-events-none absolute -right-16 top-1/2 hidden h-[130%] -translate-y-1/2 opacity-[0.14] md:block" />}
-      <div className={`container relative pt-16 sm:pt-20 ${overlap ? "pb-36 sm:pb-40" : "pb-16 sm:pb-20"}`}>
+      <div className={`container relative pt-10 sm:pt-20 ${overlap ? "pb-32 sm:pb-40" : "pb-12 sm:pb-20"}`}>
         {crumbs && (
-          <nav aria-label="Breadcrumb" className="mb-8 text-sm text-brand-200">
+          <nav aria-label="Breadcrumb" className="mb-6 text-sm text-brand-200 sm:mb-8">
             <ol className="flex flex-wrap items-center gap-2">
               <li><Link href="/" className="hover:text-white">Home</Link></li>
               {crumbs.map((c) => (
@@ -52,8 +52,8 @@ export function PageHero({
         )}
         <div className="max-w-3xl animate-rise">
           <span className="stroke-mark" />
-          <h1 className="mt-6 text-4xl font-semibold leading-[1.08] text-white sm:text-5xl lg:text-[3.5rem]">{title}</h1>
-          {intro && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-brand-100">{intro}</p>}
+          <h1 className="mt-5 text-[2rem] font-semibold leading-[1.1] text-white sm:mt-6 sm:text-5xl lg:text-[3.5rem]">{title}</h1>
+          {intro && <p className="mt-4 max-w-2xl text-[17px] leading-relaxed text-brand-100 sm:mt-6 sm:text-lg">{intro}</p>}
           {children}
         </div>
       </div>
@@ -66,8 +66,8 @@ export function SectionIntro({ title, intro, center = false, light = false }: { 
   return (
     <div className={`max-w-2xl ${center ? "mx-auto text-center" : ""}`}>
       <span className={`stroke-mark ${center ? "mx-auto" : ""}`} />
-      <h2 className={`h-section mt-5 ${light ? "text-white" : ""}`}>{title}</h2>
-      {intro && <p className={`mt-5 text-lg leading-relaxed ${light ? "text-brand-100" : "text-muted"}`}>{intro}</p>}
+      <h2 className={`h-section mt-4 sm:mt-5 ${light ? "text-white" : ""}`}>{title}</h2>
+      {intro && <p className={`mt-4 text-[17px] leading-relaxed sm:mt-5 sm:text-lg ${light ? "text-brand-100" : "text-muted"}`}>{intro}</p>}
     </div>
   );
 }
@@ -150,12 +150,12 @@ export function CTAStrip({ heading = home.cta.heading, text = home.cta.text }: {
   return (
     <section className="relative overflow-hidden bg-accent-600 text-white">
       <Mark animate={false} tone="dark" className="pointer-events-none absolute -right-10 top-1/2 h-[220%] -translate-y-1/2 opacity-[0.12] [&_path]:!stroke-white" />
-      <div className="container relative flex flex-col items-start justify-between gap-8 py-16 md:flex-row md:items-center">
+      <div className="container relative flex flex-col items-start justify-between gap-6 py-12 sm:gap-8 sm:py-16 md:flex-row md:items-center">
         <div>
           <h2 className="text-3xl font-semibold text-white sm:text-4xl">{heading}</h2>
           <p className="mt-3 max-w-xl text-lg text-white/85">{text}</p>
         </div>
-        <Link href="/request-quotation" className="btn shrink-0 bg-white px-6 py-3.5 text-brand-900 hover:bg-brand-50">
+        <Link href="/request-quotation" className="btn w-full shrink-0 bg-white px-6 py-3.5 text-brand-900 hover:bg-brand-50 sm:w-auto">
           Request a Quote <ArrowRight className="h-4 w-4" />
         </Link>
       </div>

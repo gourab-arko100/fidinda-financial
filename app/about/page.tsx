@@ -44,7 +44,7 @@ export default function AboutPage() {
             </ul>
           </div>
           <div className="space-y-6 text-lg leading-[1.8] text-muted">
-            <p className="font-display text-2xl font-medium leading-[1.45] tracking-[-0.01em] text-heading">{about.whoWeAre[0]}</p>
+            <p className="font-display text-xl font-medium leading-[1.5] tracking-[-0.01em] text-heading sm:text-2xl sm:leading-[1.45]">{about.whoWeAre[0]}</p>
             {about.whoWeAre.slice(1).map((p) => <p key={p.slice(0, 24)}>{p}</p>)}
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function AboutPage() {
                 <li key={d.name} className="relative mb-3 last:mb-0">
                   <span aria-hidden="true" className="absolute -left-4 top-1/2 h-px w-4 bg-brand-200" />
                   {d.current ? (
-                    <div aria-current="page" className="flex items-center justify-between gap-4 rounded-lg border border-accent-600 bg-accent-soft px-5 py-4">
+                    <div aria-current="page" className="flex flex-col-reverse items-start gap-2 rounded-lg border border-accent-600 bg-accent-soft px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
                       <span className="font-display font-semibold text-heading">{d.name}</span>
                       <span className="shrink-0 rounded-full bg-accent-600 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.12em] text-white">You are here</span>
                     </div>
@@ -132,7 +132,7 @@ export default function AboutPage() {
         <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-r from-brand-900 via-brand-900/90 to-brand-900/60" />
         <div className="container max-w-4xl">
           <SectionIntro title="Our commitment" light />
-          <p className="mt-8 font-display text-xl font-medium leading-[1.6] tracking-[-0.01em] text-white sm:text-2xl">{about.commitment}</p>
+          <p className="mt-6 font-display text-lg font-medium leading-[1.65] tracking-[-0.01em] text-white sm:mt-8 sm:text-2xl sm:leading-[1.6]">{about.commitment}</p>
         </div>
       </section>
 

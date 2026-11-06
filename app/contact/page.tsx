@@ -24,7 +24,20 @@ export default function ContactPage() {
 
   return (
     <>
-      <PageHero title={contactPage.title} intro={contactPage.intro} crumbs={[{ label: "Contact Us" }]} overlap decor={false} image={photos.skyline} />
+      <PageHero title={contactPage.title} intro={contactPage.intro} crumbs={[{ label: "Contact Us" }]} overlap decor={false} image={photos.skyline}>
+        {/* Quick actions for phones */}
+        <div className="mt-6 grid grid-cols-3 gap-2 lg:hidden">
+          <a href={tel(phoneKhmer)} className="flex flex-col items-center gap-1.5 rounded-lg bg-white/10 px-2 py-3 text-[13px] font-semibold text-white">
+            <PhoneIcon className="h-5 w-5 text-accent-500" /> Call
+          </a>
+          <a href={`https://wa.me/${whatsapp}?text=${waText}`} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1.5 rounded-lg bg-[#25D366] px-2 py-3 text-[13px] font-semibold text-white">
+            <WhatsAppIcon className="h-5 w-5" /> WhatsApp
+          </a>
+          <a href={`mailto:${email}`} className="flex flex-col items-center gap-1.5 rounded-lg bg-white/10 px-2 py-3 text-[13px] font-semibold text-white">
+            <MailIcon className="h-5 w-5 text-accent-500" /> Email
+          </a>
+        </div>
+      </PageHero>
 
       <section className="bg-paper pb-20 sm:pb-28">
         <div className="container relative -mt-24 grid items-start gap-8 lg:grid-cols-[1.6fr_1fr] lg:gap-10">

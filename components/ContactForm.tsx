@@ -27,7 +27,7 @@ const empty: Data = {
 };
 
 const field =
-  "w-full rounded-lg border border-transparent bg-field px-4 py-3 text-[15px] text-ink placeholder:text-muted/60 transition-colors focus:border-heading focus:bg-surface focus:outline-none focus:ring-4 focus:ring-heading/15";
+  "w-full rounded-lg border border-transparent bg-field px-4 py-3 text-base sm:text-[15px] text-ink placeholder:text-muted/60 transition-colors focus:border-heading focus:bg-surface focus:outline-none focus:ring-4 focus:ring-heading/15";
 const errField = "!border-accent-600 !bg-accent-soft";
 
 function Group({ title, children }: { title: string; children: ReactNode }) {
@@ -131,7 +131,7 @@ export default function ContactForm() {
                 type="button"
                 aria-pressed={on}
                 onClick={() => toggle(s)}
-                className={`rounded-full border px-4 py-2 text-[13px] font-medium transition-colors ${on ? "border-heading bg-brand-900 text-white" : "border-line bg-surface text-heading hover:border-brand-300"}`}
+                className={`rounded-full border px-4 py-2.5 text-[14px] font-medium sm:py-2 sm:text-[13px] transition-colors ${on ? "border-heading bg-brand-900 text-white" : "border-line bg-surface text-heading hover:border-brand-300"}`}
               >
                 {s}
               </button>

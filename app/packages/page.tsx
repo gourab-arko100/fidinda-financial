@@ -20,15 +20,15 @@ export default function PackagesPage() {
           {packages.items.map((p) => {
             const hi = p.highlighted;
             return (
-              <article key={p.name} className={`relative flex flex-col rounded-lg p-8 sm:p-10 ${hi ? "bg-brand-900 text-white shadow-[0_30px_60px_-30px_rgba(28,9,90,0.7)] lg:-my-4 lg:py-14" : "border border-line bg-surface"}`}>
+              <article key={p.name} className={`relative flex flex-col rounded-lg p-6 sm:p-10 ${hi ? "bg-brand-900 text-white shadow-[0_30px_60px_-30px_rgba(28,9,90,0.7)] lg:-my-4 lg:py-14" : "border border-line bg-surface"}`}>
                 <span className="absolute left-8 top-0 h-[3px] w-10 bg-accent-600 sm:left-10" />
                 <div className="flex items-center justify-between gap-4">
                   <h2 className={`text-2xl font-semibold ${hi ? "text-white" : ""}`}>{p.name}</h2>
                   {hi && <span className="rounded-full bg-accent-600 px-3 py-1 text-[13px] font-semibold text-white">Most popular</span>}
                 </div>
                 <p className={`mt-3 ${hi ? "text-brand-100" : "text-muted"}`}>{p.description}</p>
-                <p className="mt-8 flex items-baseline gap-2">
-                  <span className={`font-display text-4xl font-semibold tracking-tight ${hi ? "text-white" : "text-heading"}`}>{p.price}</span>
+                <p className="mt-6 flex flex-wrap items-baseline gap-x-2 gap-y-1 sm:mt-8">
+                  <span className={`font-display text-[2rem] font-semibold leading-none tracking-tight sm:text-4xl ${hi ? "text-white" : "text-heading"}`}>{p.price}</span>
                   <span className={`text-[15px] ${hi ? "text-brand-200" : "text-muted"}`}>{p.period}</span>
                 </p>
                 <ul className={`mt-8 flex-1 space-y-3.5 border-t pt-8 ${hi ? "border-white/15" : "border-line"}`}>

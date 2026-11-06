@@ -108,7 +108,7 @@ export default function Header() {
         </div>
 
         {/* Mobile menu */}
-        <div id="mobile-menu" className={`overflow-hidden border-t border-line bg-surface transition-[max-height] duration-300 lg:hidden ${open ? "max-h-[80vh]" : "max-h-0 border-t-0"}`}>
+        <div id="mobile-menu" className={`overflow-hidden border-t border-line bg-surface transition-[max-height] duration-300 lg:hidden ${open ? "max-h-[80vh] overflow-y-auto" : "max-h-0 border-t-0"}`}>
           <nav aria-label="Mobile" className="container py-4">
             <ul className="space-y-1">
               {nav.map((item) => (
@@ -120,7 +120,7 @@ export default function Header() {
                     <ul className="ml-4 mt-1 space-y-1 border-l-2 border-accent-600/70 pl-3">
                       {item.children.map((c) => (
                         <li key={c.href}>
-                          <Link href={c.href} className={`block rounded-lg px-3 py-2 text-sm ${pathname === c.href ? "text-accent-ink" : "text-muted"}`}>
+                          <Link href={c.href} className={`block rounded-lg px-3 py-2.5 text-[15px] ${pathname === c.href ? "text-accent-ink" : "text-muted"}`}>
                             {c.label}
                           </Link>
                         </li>

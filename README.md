@@ -38,7 +38,8 @@ next.config.mjs          Redirects for old URLs (commented examples)
 | Brand colours | `tailwind.config.ts` → `brand` (logo indigo #1C095A) and `accent` (logo red #E1041C) |
 | Vision / Mission | `data/site.ts` → `about.vision`, `about.mission` (text + photo link) |
 | Packages | `data/site.ts` → `packages.items` |
-| Legislations / Articles | `data/site.ts` → `resources` (copy an entry to add more) |
+| Publications / Legislations | `data/site.ts` → `resources` (copy an entry to add more) |
+| Articles | `data/articles.ts` (each article gets its own page at `/articles/<slug>`; copy one to add more) |
 | WhatsApp / Telegram button | `data/site.ts` → `contact.whatsapp`, `contact.telegramUsername` |
 | Old URL redirects | Uncomment lines in `next.config.mjs` |
 

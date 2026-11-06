@@ -13,12 +13,12 @@ export default function HomePage() {
         <Image src={photos.aerial.src} alt="" fill priority sizes="100vw" className="-z-20 object-cover" />
         <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-r from-brand-900 via-brand-900/92 to-brand-900/70" />
 
-        <div className="container grid items-center gap-14 pb-16 pt-16 sm:pt-20 lg:grid-cols-[1.1fr_1fr] lg:gap-12 lg:pb-24 lg:pt-24">
+        <div className="container grid items-center gap-12 pb-14 pt-10 sm:gap-14 sm:pb-16 sm:pt-20 lg:grid-cols-[1.1fr_1fr] lg:gap-12 lg:pb-24 lg:pt-24">
           <div className="animate-rise">
             <p className="font-display text-[15px] font-medium text-brand-200">{hero.eyebrow}</p>
-            <h1 className="mt-5 text-[2.6rem] font-semibold leading-[1.04] text-white sm:text-6xl lg:text-[4.1rem]">{hero.heading}</h1>
-            <p className="mt-7 max-w-xl text-lg leading-relaxed text-brand-100 sm:text-xl">{hero.subtext}</p>
-            <div className="mt-10 flex flex-wrap gap-3">
+            <h1 className="mt-4 text-[2.15rem] font-semibold leading-[1.08] text-white sm:mt-5 sm:text-6xl sm:leading-[1.04] lg:text-[4.1rem]">{hero.heading}</h1>
+            <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-brand-100 sm:mt-7 sm:text-xl">{hero.subtext}</p>
+            <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap">
               <Link href="/request-quotation" className="btn-red px-6 py-3.5 text-base">
                 Request a Quote <ArrowRight className="h-4 w-4" />
               </Link>
@@ -28,12 +28,12 @@ export default function HomePage() {
 
           {/* Photo composition */}
           <div className="relative mx-auto w-full max-w-[540px] animate-rise [animation-delay:150ms]">
-            <span aria-hidden="true" className="absolute -left-4 -top-4 h-24 w-24 border-l-[6px] border-t-[6px] border-accent-600" />
-            <span aria-hidden="true" className="absolute -bottom-4 -right-4 h-24 w-24 border-b-[6px] border-r-[6px] border-white/80" />
+            <span aria-hidden="true" className="absolute -left-2 -top-2 h-16 w-16 border-l-[5px] border-t-[5px] border-accent-600 sm:-left-4 sm:-top-4 sm:h-24 sm:w-24 sm:border-l-[6px] sm:border-t-[6px]" />
+            <span aria-hidden="true" className="absolute -bottom-2 -right-2 h-16 w-16 border-b-[5px] border-r-[5px] border-white/80 sm:-bottom-4 sm:-right-4 sm:h-24 sm:w-24 sm:border-b-[6px] sm:border-r-[6px]" />
             <div className="relative aspect-[5/4] overflow-hidden rounded-xl shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)]">
               <Image src={photos.teamLaptop.src} alt={photos.teamLaptop.alt} fill priority sizes="(min-width: 1024px) 45vw, 100vw" className="object-cover" />
             </div>
-            <div className="absolute -bottom-8 left-6 flex items-center gap-3 rounded-lg bg-surface px-5 py-4 text-heading shadow-[0_20px_40px_-16px_rgba(28,9,90,0.5)] sm:left-8">
+            <div className="absolute -bottom-6 left-4 flex items-center gap-3 rounded-lg bg-surface px-4 py-3 sm:-bottom-8 sm:left-8 sm:px-5 sm:py-4 text-heading shadow-[0_20px_40px_-16px_rgba(28,9,90,0.5)]">
               <ShieldIcon className="h-8 w-8 shrink-0 text-accent-600" />
               <p className="leading-tight">
                 <span className="block font-display text-[15px] font-semibold">Licensed Tax Agent</span>
@@ -65,7 +65,7 @@ export default function HomePage() {
       {/* About */}
       <section className="band">
         <div className="container grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
-          <div className="relative pb-16 pr-10 sm:pr-24">
+          <div className="relative pb-14 pr-8 sm:pb-16 sm:pr-24">
             <PhotoFrame photo={photos.advisor} ratio="aspect-[4/5]" sizes="(min-width: 1024px) 35vw, 80vw" />
             <div className="absolute bottom-0 right-0 w-[52%] overflow-hidden rounded-xl border-[6px] border-surface shadow-[0_24px_50px_-24px_rgba(28,9,90,0.55)]">
               <div className="relative aspect-[4/3]">
@@ -100,7 +100,7 @@ export default function HomePage() {
         <div className="container grid items-center gap-14 lg:grid-cols-[1fr_1.2fr] lg:gap-20">
           <div className="relative order-2 lg:order-1">
             <PhotoFrame photo={photos.handshake} ratio="aspect-[4/5] lg:aspect-[5/6]" />
-            <div className="absolute -right-3 top-10 rounded-lg bg-brand-900 px-6 py-5 text-white shadow-xl sm:-right-6">
+            <div className="absolute -right-1 top-6 rounded-lg bg-brand-900 px-5 py-4 sm:-right-6 sm:top-10 sm:px-6 sm:py-5 text-white shadow-xl">
               <p className="text-[13px] text-brand-200">Established in</p>
               <p className="mt-1 font-display text-3xl font-semibold">2023</p>
             </div>

@@ -46,7 +46,7 @@ export default function RequestQuotationPage() {
               <ul className="mt-5 space-y-4">
                 <li className="flex items-center gap-3"><PhoneIcon className="h-5 w-5 text-accent-600" /><a href={tel(phoneKhmer)} className="font-semibold text-heading hover:text-accent-ink">{phoneKhmer}</a><span className="text-[15px] text-muted">Khmer</span></li>
                 <li className="flex items-center gap-3"><PhoneIcon className="h-5 w-5 text-accent-600" /><a href={tel(phoneEnglish)} className="font-semibold text-heading hover:text-accent-ink">{phoneEnglish}</a><span className="text-[15px] text-muted">English</span></li>
-                <li className="flex items-center gap-3"><MailIcon className="h-5 w-5 shrink-0 text-accent-600" /><a href={`mailto:${email}`} className="font-semibold text-heading [overflow-wrap:anywhere] hover:text-accent-ink">{email}</a></li>
+                <li className="flex items-center gap-3"><MailIcon className="h-5 w-5 shrink-0 text-accent-600" /><a href={`mailto:${email}`} className="text-[15px] font-semibold text-heading [overflow-wrap:anywhere] hover:text-accent-ink sm:text-base">{email}</a></li>
               </ul>
             </div>
           </aside>
